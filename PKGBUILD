@@ -43,7 +43,7 @@ fi
 _py="python"
 _proj=hip
 _platform=android
-_program=blotter
+_program=wm
 _pkg=${_platform}-${_program}
 pkgbase="${_pkg}"
 pkgname=(
@@ -54,12 +54,12 @@ if [[ "${_docs}" == "true" ]]; then
     "${_pkg}-docs"
   )
 fi
-pkgver=0.0.0.0.0.0.1
-_commit="3347aae060d552462963c6bec0b184cda7fee5f6"
+pkgver=0.0.1
+_commit="bcb3001ec6e6115e2616b6e6a4a32fadf029e4cb"
 pkgrel=1
 _pkgdesc=(
-  "Program which displays text on Android"
-  "(a ${_program})."
+  "Android Window Manager"
+  "command-line program."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -72,7 +72,8 @@ license=(
   'Apache-2.0'
 )
 depends=(
-  "dialog"
+  "android-activity-utils"
+  "sudo"
   "termux-shortcuts-utils"
 )
 makedepends=(
@@ -88,13 +89,13 @@ checkdepends=(
 provides=(
   "${_program}"
 )
-_android_blotter_docs_optdepends=(
+_android_wm_docs_optdepends=(
   "${_pkg}-docs:"
-    "Android blotter"
+    "Android Window Manager"
     "documentation"
     "and manuals."
 )
-_android_blotter_docs_ref_optdepends+=(
+_android_blotter_wm_ref_optdepends+=(
  "${_pkg}:"
    "The package this documentation"
    "package pertains to."
@@ -114,7 +115,7 @@ elif [[ "${_tag_name}" == "commit" ]]; then
   _archive_format="zip"
   _uri="${_url}/archive/${_commit}.${_archive_format}"
 fi
-_tarname="${_proj}-${_tag}"
+_tarname="${_pkg}-${_tag}"
 _tarfile="${_tarname}.${_archive_format}"
 _src="${_tarfile}::${_uri}"
 source=(
@@ -124,7 +125,7 @@ sha256sums=(
   "${_sum}"
 )
 
-package_android-blotter() {
+package_android-wm() {
   local \
     _make_opts=()
   _make_opts+=(
@@ -143,13 +144,13 @@ package_android-blotter() {
     "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-package_android-blotter-docs() {
+package_android-wm-docs() {
   local \
     _make_opts=()
   pkgdesc="${pkgdesc} (documentation)"
   depends=()
   optdepends=(
-    "${_android_blotter_ref_optdepends[*]}"
+    "${_android_wm_ref_optdepends[*]}"
   )
   provides=()
   _make_opts+=(

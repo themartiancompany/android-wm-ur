@@ -19,7 +19,7 @@
 [comment]: <> (See the GNU Affero General Public License)
 [comment]: <> (for more details.)
 
-# `android-blotter`
+# `android-wm`
 
 universal recipe for
 [user repo](
