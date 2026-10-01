@@ -105,7 +105,7 @@ optdepends=(
 )
 _tag_name="commit"
 _tag="${_commit}"
-_sum="SKIP"
+_sum="e316c83989c6bdd564dd2f9770cdca4f06417db81eeffda24285df7498d46e93"
 _sig_sum="SKIP"
 _url="${url}"
 if [[ "${_tag_name}" == "tag" ]]; then
