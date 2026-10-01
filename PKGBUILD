@@ -56,7 +56,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver=0.0.1
 _commit="bcb3001ec6e6115e2616b6e6a4a32fadf029e4cb"
-pkgrel=2
+pkgrel=8
 _pkgdesc=(
   "Android Window Manager"
   "command-line program."
