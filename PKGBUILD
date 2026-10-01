@@ -57,7 +57,7 @@ fi
 pkgver=0.0.1
 _commit="bcb3001ec6e6115e2616b6e6a4a32fadf029e4cb"
 _man_commit="024ef06be7873ef09e2f3896cba672f086229cd2"
-pkgrel=10
+pkgrel=11
 _pkgdesc=(
   "Android Window Manager"
   "command-line program."
@@ -139,7 +139,7 @@ prepare() {
     -vrf \
     "${srcdir}/${_tarname}/man"
   mv \
-    "man-${_man_commit}" \
+    "${_man_tarname}" \
     "${srcdir}/${_tarname}/man"
 }
 
