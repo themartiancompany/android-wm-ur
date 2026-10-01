@@ -108,7 +108,7 @@ _tag_name="commit"
 _tag="${_commit}"
 _sum="e316c83989c6bdd564dd2f9770cdca4f06417db81eeffda24285df7498d46e93"
 _sig_sum="SKIP"
-_man_sum=""
+_man_sum="0a2cc913186876293e1d8f62819b32b63162c5a60ebf3c9e2d356acba86f7da8"
 _url="${url}"
 if [[ "${_tag_name}" == "tag" ]]; then
   _archive_format="tar.gz"
@@ -127,9 +127,11 @@ _src="${_tarfile}::${_uri}"
 _man_src="${_man_tarfile}::${_man_uri}"
 source=(
   "${_src}"
+  "${_man_src}"
 )
 sha256sums=(
   "${_sum}"
+  "${_man_sum}"
 )
 
 prepare() {
