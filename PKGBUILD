@@ -120,10 +120,11 @@ elif [[ "${_tag_name}" == "commit" ]]; then
   _man_uri="${_url}-man/archive/${_man_commit}.${_archive_format}"
 fi
 _tarname="${_pkg}-${_tag}"
+_tarfile="${_tarname}.${_archive_format}"
 _man_tarname="${_pkg}-man-${_man_commit}"
 _man_tarfile="${_man_tarname}.${_archive_format}"
 _src="${_tarfile}::${_uri}"
-_man_src="${_man_tarfile}::${_uri}"
+_man_src="${_man_tarfile}::${_man_uri}"
 source=(
   "${_src}"
 )
