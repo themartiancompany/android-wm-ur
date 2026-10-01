@@ -56,6 +56,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver=0.0.1
 _commit="bcb3001ec6e6115e2616b6e6a4a32fadf029e4cb"
+_man_commit="024ef06be7873ef09e2f3896cba672f086229cd2"
 pkgrel=8
 _pkgdesc=(
   "Android Window Manager"
@@ -107,23 +108,37 @@ _tag_name="commit"
 _tag="${_commit}"
 _sum="e316c83989c6bdd564dd2f9770cdca4f06417db81eeffda24285df7498d46e93"
 _sig_sum="SKIP"
+_man_sum=""
 _url="${url}"
 if [[ "${_tag_name}" == "tag" ]]; then
   _archive_format="tar.gz"
   _url="${_url}/archive/refs/tags/v${_tag}.tar.gz"
+  _man_url="${_url}-man/archive/refs/tags/v${_tag}.tar.gz"
 elif [[ "${_tag_name}" == "commit" ]]; then
   _archive_format="zip"
   _uri="${_url}/archive/${_commit}.${_archive_format}"
+  _man_uri="${_url}-man/archive/${_man_commit}.${_archive_format}"
 fi
 _tarname="${_pkg}-${_tag}"
-_tarfile="${_tarname}.${_archive_format}"
+_man_tarname="${_pkg}-man-${_man_commit}"
+_man_tarfile="${_man_tarname}.${_archive_format}"
 _src="${_tarfile}::${_uri}"
+_man_src="${_man_tarfile}::${_uri}"
 source=(
   "${_src}"
 )
 sha256sums=(
   "${_sum}"
 )
+
+prepare() {
+  rm \
+    -vrf \
+    "${srcdir}/${_tarname}/man"
+  mv \
+    "man-${_man_commit}" \
+    "${srcdir}/${_tarname}/man"
+}
 
 package_android-wm() {
   local \
