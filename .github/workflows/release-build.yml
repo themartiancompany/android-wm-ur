@@ -1179,9 +1179,9 @@ jobs:
             ${{ github.event.release.upload_url }}
             # ${{ steps.create_release.outputs.upload_url }}
           asset_path:
-            "android-blotter-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "android-wm-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_name:
-            "dogeos-android-android-blotter-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "dogeos-android-android-wm-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_content_type:
             application/gzip
   arch_release:
@@ -1987,9 +1987,9 @@ jobs:
             ${{ github.event.release.upload_url }}
             # ${{ steps.create_release.outputs.upload_url }}
           asset_path:
-            "android-blotter-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "android-wm-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_name:
-            "dogeos-gnu-android-blotter-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "dogeos-gnu-android-wm-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_content_type:
             application/gzip
   msys2_release:
@@ -2615,9 +2615,9 @@ jobs:
             ${{ github.event.release.upload_url }}
             # ${{ steps.create_release.outputs.upload_url }}
           asset_path:
-            "android-blotter-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "android-wm-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_name:
-            "dogeos-windows-android-blotter-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "dogeos-windows-android-wm-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_content_type:
             application/gzip
 
