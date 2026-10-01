@@ -95,13 +95,13 @@ _android_wm_docs_optdepends=(
     "documentation"
     "and manuals."
 )
-_android_blotter_wm_ref_optdepends+=(
+_android_wm_wm_ref_optdepends+=(
  "${_pkg}:"
    "The package this documentation"
    "package pertains to."
 )
 optdepends=(
-  "${_android_blotter_docs_optdepends[*]}"
+  "${_android_wm_docs_optdepends[*]}"
 )
 _tag_name="commit"
 _tag="${_commit}"
